@@ -5,21 +5,19 @@ permalink: /about/
 author_profile: true
 --- 
 
-* NAME : JiWon, Hyeon
-* MAJOR : Computer Science Engineering
+* NAME :  Brady kim(阿金），김성수
+* MAJOR : Statistics, Chinese Language and Literature
 
 ## Career & Activities
  - Undergraduate resercher at Embedded System LAB (2018.06 ~ 2020.12)
  - LikeLion 7th @SCH (2019.03 ~ 2019.12)
 
 ## Current Interest
- * Bigdata
- * Android Applicaiton 
- * Web Development
- * Internet of Things
+ * Data Analytics
+ * Data Infra and Engineer
 
 ## Contact
- * Email : zlone1208@gmail.com
- * Git : [https://github.com/Hyeonjiwon](https://github.com/Hyeonjiwon)
- * Blog : [https://hyeonjiwon.github.io/](https://hyeonjiwon.github.io/)
+ * Email : fenzhan@naver.com
+ * Git : [https://github.com/fenzhantw](https://github.com/fenzhantw)
+ * Blog : [https://fenzhantw.github.io/](https://fenzhantw.github.io/)
 
