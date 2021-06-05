@@ -5,7 +5,7 @@ permalink: /about/
 author_profile: true
 --- 
 
-* NAME :  Brady kim(阿金），김성수
+* NAME :  Brady kim(阿金)，김성수
 * MAJOR : Statistics, Chinese Language and Literature
 
 ## Career & Activities
