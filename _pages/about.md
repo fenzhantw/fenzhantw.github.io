@@ -1,12 +1,12 @@
 ---
 permalink: /about/
-title: "About"
-excerpt: "About Me"
-search: true
-last_modified_at: 2020-01-23T13:00:00+09:00
+title: "about"
+layout: single
+author_profile: true
 toc: true
-
 --- 
+
+
 
 ## Profile
 <center><img src="/assets/img/me.jpg" width="30%" height="30%" style="
