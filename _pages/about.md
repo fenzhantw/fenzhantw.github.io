@@ -9,8 +9,7 @@ author_profile: true
 * MAJOR : Statistics, Chinese Language and Literature
 
 ## Career & Activities
- - Undergraduate resercher at Embedded System LAB (2018.06 ~ 2020.12)
- - LikeLion 7th @SCH (2019.03 ~ 2019.12)
+
 
 ## Current Interest
  * Data Analytics
