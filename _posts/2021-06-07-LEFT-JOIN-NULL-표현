@@ -16,8 +16,6 @@ toc_sticky: true
 
 ---
 
-<center><img src="https://user-images.githubusercontent.com/47733530/72419812-df6e0780-37c0-11ea-907c-1fd2bace1f6d.png" width="40%" height="30%"></center>
-
 ## Intro
 BI 툴로 데이터를 그래프를 표현할때나, 누군가에게 데이터를 보고할때 COUNT로 집계가 되는 데이터가 없지만 이를 ROW로 나타내고 "0"인 값으로 표현해야 하는 경우가 생긴다.
 
