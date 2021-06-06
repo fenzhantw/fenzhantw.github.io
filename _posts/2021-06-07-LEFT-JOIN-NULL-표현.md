@@ -1,6 +1,6 @@
 ---
-title: "[Mysql] LEFT JOIN할 때 COUNT 집계함수 NULL값 또는 0인 값 표시하는 방법 및 쿼리"
-excerpt: "SQL"
+title: "[Mysql] LEFT JOIN과 COUNT시 NULL값 또는 0인 값 표시하는 방법 및 쿼리"
+excerpt: "COUNT NULL값 표시하는 방법"
 categories:
     - SQL
 
