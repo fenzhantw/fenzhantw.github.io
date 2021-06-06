@@ -1,16 +1,17 @@
-
-﻿---
-title:  "SQL 코딩테스트 대비 by 프로그래머스"
-excerpt: "프로그래머스 SQL 고득점 kit 모든 문제 답안과 오답노트를 정리합니다. 유형별 문제를 금방 복습하는 것이 목표인 글입니다."
-toc: true
-toc_sticky: true
-
+---
+title: "[Mysql] LEFT JOIN할 때 COUNT 집계함수 NULL값 또는 0인 값 표시하는 방법 및 쿼리"
+excerpt: "SQL"
 categories:
-  - SQL
-tags:
-  - SQL
-  - 코딩테스트
-last_modified_at: 2020-03-13TO20:00:00+09:00
+    - SQL
+
+tag:
+    - SQL
+    - Mysql
+
+author_profile: true    #작성자 프로필 출력 여부
+
+toc: true   #Table Of Contents 목차 
+toc_sticky: true
 ---
 
 ## Intro
