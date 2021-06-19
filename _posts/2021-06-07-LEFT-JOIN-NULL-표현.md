@@ -24,7 +24,7 @@ SELECT B.id,B.title,COUNT(A.id)
 FROM sales A LEFT JOIN items B ON A.item_id = B.id
 GROUP BY A.item_id
 ```
-* 상품명과 판매개수를 구하려는 쿼리를 실행하기 위해 간단한 LEFT JOIN으로 테이블을 JOIN하고 쿼리를 날린다.
+* 상품명과 판매개수를 구하려는 쿼리를 실행하기 위해 간단한 LEFT JOIN으로 테이블을 JOIN하고 쿼리를 실행시킨다.
 * 하지만 다음 쿼리 실행시 COUNT로 집계가 되지 않는 상품의 경우 NULL 값이 출력되지 않고, COUNT(A.id) = 1인 값부터 출력이 된다.
 
 ## 서브쿼리를 이용한 NULL값 표현
