@@ -1,0 +1,63 @@
+---
+title: "[python] 객체지향언어란? 클래스와 객체"
+excerpt: "python program"
+categories:
+    - python
+
+tag:
+    - python
+    - pandas
+
+author_profile: true    #작성자 프로필 출력 여부
+
+toc: true   #Table Of Contents 목차 
+toc_sticky: true
+---
+
+## Intro
+객체 지향 프로그래밍 언어, Object Oriented Programming(OOP)
+
+객체: 실생활에서 일종의 물건으로 속성(Attribute)와 행동(action)을 가짐
+예를들어 의자라는 물건이 있으면, 다리의 개수, 다리의 모양, 움직여 지다(행동) 을 가지고 있을 수 있다. 따라서 하나의 객체에는 속성과 행동을 가진다고 할 수 있다.
+
+-인공지능 축구 프로그램을 작성한다고 가정
+
+-객체 종류: 팀, 선수, 심판, 공
+- Action : 선수 - 공을 차다, 패스하다
+attribute : 선수 - 선수 이름, 포지션, 소속팀
+            팀 - 팀 이름, 팀 연고지, 팀소속 선수
+            
+## 클래스 / 인스턴스
+
+OOP는 설계도에 해당하는 클래스와 구현체인 인스턴스로 나눔
+붕어빵틀(Class)에 고구마, 팥을 넣으면 실제 존재하는 붕어빵(인스턴스)가 나오듯이 붕어빵은 설계도(Class)이며, 실제로 존재해서 우리가 사용하는 것는 붕어빵이다. 
+
+->직접 구현을 해봐야 알 수 있음(제일 중요)
+
+## 직접 구현(Objects in python)
+
+축구 선수 정보를 Class로 구현하기
+
+*추가 상식 - 변수와 Class명 함수명은 짓는 방식이 존재
+- snake_case 띄워쓰기 부분에 "_"를 추가 뱀처럼 늘여쓰기, 파이썬 함수/변수명에 사용
+
+-CamelCase: 띄워쓰기 부분에 대문자 낙타의 등 모양, 파이썬 Class명에 사용
+
+-Attribute 추가는 __init__,self와 함께!
+__init__은 객체 초기화 예약 함수(이걸 쓰면 객체를 초기화합니다 라는 의미로 쓰임)
+
+- __는 특수한 예약 함수나 변수 그리고 함수명 변경(맨글링)으로 사용
+```
+#Class 선언, Object는 python3에서 자동 상속
+*객체명을 적지 않아도 python3에서는 자동 상속
+
+# class(class 예약어) SoccerPlayer(class 명) object(상속받는 객체명)
+  
+  Class SoccerPlayer(object):
+      def__init__(self,name,position,back_number):
+          self.name = name
+          self.position = position
+          self.back_number = back_number
+```
+
+
