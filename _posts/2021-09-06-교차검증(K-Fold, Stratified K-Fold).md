@@ -31,7 +31,7 @@ toc_sticky: true
 간단하게 예로 들면, 수차례의 모의고사(학습 및 검증)를 수능(성능)을 보기 전에 보는 것이다.
 
 
-## K-fold? Stratified K-fold
+## K-fold? Stratified K-fold?
 
 ![image](https://user-images.githubusercontent.com/81638919/132231364-fb6fa8c8-9788-4149-a8ad-1e83c5cc95bd.png)
 출처 : https://scikit-learn.org/stable/modules/cross_validation.html
@@ -189,130 +189,63 @@ Name: label, dtype: int64
 
 다른 교차 검증도 마찬가지인것으로 보인다.
 
-## 인덱싱과 loc 활용
+## 예제
 
 ```
 
-# Make a list of cities to subset on
-cities = ["Moscow", "Saint Petersburg"]
+from sklearn.model_selection import StratifiedKFold
 
-# Subset temperatures using square brackets
-print(temperatures[temperatures['city'].isin(cities)])
+skf = StratifiedKFold(n_splits=3)
+n_iter=0
 
-# # Subset temperatures_ind using .loc[]
-print(temperatures_ind.loc[cities])
-
-```
-
-```
-                       date country  avg_temp_c
-city                                           
-Moscow           2000-01-01  Russia      -7.313
-Moscow           2000-02-01  Russia      -3.551
-Moscow           2000-03-01  Russia      -1.661
-Moscow           2000-04-01  Russia      10.096
-Moscow           2000-05-01  Russia      10.357
-...                     ...     ...         ...
-Saint Petersburg 2013-05-01  Russia      12.355
-Saint Petersburg 2013-06-01  Russia      17.185
-Saint Petersburg 2013-07-01  Russia      17.234
-Saint Petersburg 2013-08-01  Russia      17.153
-Saint Petersburg 2013-09-01  Russia         NaN
-
-```
-## setting multi-level indexex
-
+for train_index, test_index in skf.split(iris_df, iris_df['label']):
+    n_iter += 1
+    label_train= iris_df['label'].iloc[train_index]
+    label_test= iris_df['label'].iloc[test_index]
+    print('## 교차 검증: {0}'.format(n_iter))
+    print('학습 레이블 데이터 분포:\n', label_train.value_counts())
+    print('검증 레이블 데이터 분포:\n', label_test.value_counts())
 
 ```
 
-# Index temperatures by country & city
-temperatures_ind = temperatures.set_index(['country','city'])
+```
+ ## 교차 검증: 1
+학습 레이블 데이터 분포:
+ 2    34
+0    33
+1    33
+Name: label, dtype: int64
+검증 레이블 데이터 분포:
+ 0    17
+1    17
+2    16
+Name: label, dtype: int64
+## 교차 검증: 2
+학습 레이블 데이터 분포:
+ 1    34
+0    33
+2    33
+Name: label, dtype: int64
+검증 레이블 데이터 분포:
+ 0    17
+2    17
+1    16
+Name: label, dtype: int64
+## 교차 검증: 3
+학습 레이블 데이터 분포:
+ 0    34
+1    33
+2    33
+Name: label, dtype: int64
+검증 레이블 데이터 분포:
+ 1    17
+2    17
+0    16
+Name: label, dtype: int64
 
-# List of tuples: Brazil, Rio De Janeiro & Pakistan, Lahore
-rows_to_keep = [("Brazil","Rio De Janeiro"), ("Pakistan","Lahore")]
+```
+교차 검증 첫번째에 보면 학습 레이블의 분포도가 33,34,33 검증 레이블의 분포도가 17 17 16으로 균일하게 분배된것을 확인할 수 있다.
 
-# Subset for rows to keep
-print(temperatures_ind.loc[rows_to_keep])
-```
-```
-                              date  avg_temp_c
-country  city                                 
-Brazil   Rio De Janeiro 2000-01-01      25.974
-         Rio De Janeiro 2000-02-01      26.699
-         Rio De Janeiro 2000-03-01      26.270
-         Rio De Janeiro 2000-04-01      25.750
-         Rio De Janeiro 2000-05-01      24.356
-...                            ...         ...
-Pakistan Lahore         2013-05-01      33.457
-         Lahore         2013-06-01      34.456
-         Lahore         2013-07-01      33.279
-         Lahore         2013-08-01      31.511
-         Lahore         2013-09-01         NaN
-```
-    
-```
-# Sort temperatures_ind by index values
-print(temperatures_ind.sort_index())
+정리하자면 K 폴드는 학습한 데이터로 여러번 검증을 하는 것인데, 학습데이터를 다시 학습 데이터와 검증 데이터로 나누어 반복적으로 테스트하는 것을 말한다. 
 
-# Sort temperatures_ind by index values at the city level
-print(temperatures_ind.sort_index(level="city"))
-
-# Sort temperatures_ind by country then descending city
-print(temperatures_ind.sort_index(level=["country", "city"], ascending = [True, False]))
-```
-```
-                         date  avg_temp_c
-country     city                         
-Afghanistan Kabul  2000-01-01       3.326
-            Kabul  2000-02-01       3.454
-            Kabul  2000-03-01       9.612
-            Kabul  2000-04-01      17.925
-            Kabul  2000-05-01      24.658
-...                       ...         ...
-Zimbabwe    Harare 2013-05-01      18.298
-            Harare 2013-06-01      17.020
-            Harare 2013-07-01      16.299
-            Harare 2013-08-01      19.232
-            Harare 2013-09-01         NaN
-```
-```
-# Sort the index of temperatures_ind
-temperatures_srt = temperatures_ind.sort_index()
-
-# Subset rows from Pakistan to Russia
-print(temperatures_srt.loc["Pakistan":"Russia"])
-```
-```
-                                date  avg_temp_c
-country  city                                   
-Pakistan Faisalabad       2000-01-01      12.792
-         Faisalabad       2000-02-01      14.339
-         Faisalabad       2000-03-01      20.309
-         Faisalabad       2000-04-01      29.072
-         Faisalabad       2000-05-01      34.845
-...                              ...         ...
-Russia   Saint Petersburg 2013-05-01      12.355
-         Saint Petersburg 2013-06-01      17.185
-         Saint Petersburg 2013-07-01      17.234
-         Saint Petersburg 2013-08-01      17.153
-         Saint Petersburg 2013-09-01         NaN
-```
-```
-# Try to subset rows from Lahore to Moscow
-print(temperatures_srt.loc[("Pakistan","Lahore"):("Russia","Moscow")])
-```
-```
-                     date  avg_temp_c
-country  city                         
-Pakistan Lahore 2000-01-01      12.792
-         Lahore 2000-02-01      14.339
-         Lahore 2000-03-01      20.309
-         Lahore 2000-04-01      29.072
-         Lahore 2000-05-01      34.845
-...                    ...         ...
-Russia   Moscow 2013-05-01      16.152
-         Moscow 2013-06-01      18.718
-         Moscow 2013-07-01      18.136
-         Moscow 2013-08-01      17.485
-         Moscow 2013-09-01         NaN
-```
+K 폴드는 다시 일반 K-fold와 Stratified K-fold로 나뉘는데, Stratified는 불균형한 분포도를 가진 레이블 데이터 집합을 위한 K-fold이다. 
