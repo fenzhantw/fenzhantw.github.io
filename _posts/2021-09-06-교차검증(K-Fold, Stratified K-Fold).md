@@ -247,6 +247,36 @@ Name: label, dtype: int64
 ```
 교차 검증 첫번째에 보면 일반적인 K-fold 기법과 다르게 학습 레이블의 분포도가 33,34,33 검증 레이블의 분포도가 17 17 16으로 균일하게 분배된것을 확인할 수 있다.
 
+## cross_val_score로 간편하게 교차 검증
+
+위에서 본것과 같이 Kfold 클래스를 이용한 교차 검증 방법은 첫번째로, 폴드(K) 갯수를 설정해야하고, 두번째로 for 루프에서 반복적으로 학습 및 검증 데이터를 추출하여 학습과 예측을 수행해야했다. 하지만 sklearn에서 제공하는 API로 코드 한 줄로 위의 복잡한 코딩 과정을 줄일 수 있다.
+
+```
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import cross_val_score , cross_validate
+from sklearn.datasets import load_iris
+import numpy as np
+
+iris_data = load_iris()
+dt_clf = DecisionTreeClassifier(random_state=156)
+
+data = iris_data.data
+label = iris_data.target
+
+# 성능 지표는 정확도(accuracy) , 교차 검증 세트는 3개 
+scores = cross_val_score(dt_clf , data , label , scoring='accuracy',cv=3)
+print('교차 검증별 정확도:',np.round(scores, 4))
+print('평균 검증 정확도:', np.round(np.mean(scores), 4))
+
+```
+```
+교차 검증별 정확도: [0.9804 0.9216 0.9792]
+평균 검증 정확도: 0.9604
+```
+cross_val_score를 수행하면 반환되는 것은 교차 세트별로 반환한 정확도 값이 나오며, 이를 평균 검증 정확도를 내었다.
+croos_val_score가 훨씬 더 간단해 보인다.
+```
+
 ## 정리
 
 정리하자면 K 폴드는 학습한 데이터로 여러번 검증을 하는 것인데, 학습데이터를 다시 학습 데이터와 검증 데이터로 나누어 반복적으로 테스트하는 것을 말한다. 
