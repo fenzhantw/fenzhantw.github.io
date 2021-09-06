@@ -275,7 +275,7 @@ print('평균 검증 정확도:', np.round(np.mean(scores), 4))
 ```
 cross_val_score를 수행하면 반환되는 것은 교차 세트별로 반환한 정확도 값이 나오며, 이를 평균 검증 정확도를 내었다.
 croos_val_score가 훨씬 더 간단해 보인다.
-```
+
 
 ## 정리
 
