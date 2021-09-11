@@ -33,14 +33,15 @@ avocados_2019 = pd.DataFrame(avocados_list)
 
 print(avocados_2019)
 ```
-딕셔너리의 key값이 데이터프레임 생성시 컬럼명이 되고, value값은 해당 컬럼에 해당하는 값이 된다. 하지만 컬럼명을 계속 써줘야 하기 때문에 dictionary of lists를 데이터프레임으로 변경하는게 더욱 효율적이다.
 
-## 딕셔너리를 이용한 데이터프레임 생성
 ```python
          date  small_sold  large_sold
 0  2019-11-03    10376832     7835071
 1  2019-11-10    10717154     8561348
 ```
+딕셔너리의 key값이 데이터프레임 생성시 컬럼명이 되고, value값은 해당 컬럼에 해당하는 값이 된다. 하지만 컬럼명을 계속 써줘야 하기 때문에 dictionary of lists를 데이터프레임으로 변경하는게 더욱 효율적이다.
+
+## 딕셔너리를 이용한 데이터프레임 생성
 
 ```python
 avocados_dict = {
