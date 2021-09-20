@@ -2,8 +2,7 @@
 title: "[ML] 결정 트리（Decision Tree,決策樹）"
 excerpt: "결정 트리, 분류, 分類演算法"
 categories:
-    - python
-    - machine learning
+    - ML
 
 tag:
     - python
