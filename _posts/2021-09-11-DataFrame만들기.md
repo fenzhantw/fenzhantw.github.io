@@ -2,7 +2,6 @@
 title: "[pandas] Dictionaly와 list를 이용한 데이터프레임 생성 "
 excerpt: "pandas, list of dict, dict of list"
 categories:
-    - python
     - pandas
 
 tag:
