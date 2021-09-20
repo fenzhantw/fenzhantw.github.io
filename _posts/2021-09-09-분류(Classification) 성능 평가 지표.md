@@ -19,6 +19,7 @@ toc_sticky: true
 분류기를 만들면, 분류기의 성능을 측정해야하는데 일반적으로는 실제 결과 데이터와 예측 결과 데이터가 얼마나 정확하고 오류가 적게 발생하는가에 기반하지만 단순히 정확도만 가지고 판단했을 경우에는 함정에 빠질 수 있으니 유의해야한다. 
 
 ## 정확도의 함정
+![image](https://user-images.githubusercontent.com/81638919/133983596-c3369ac1-84ee-43b8-949c-2512acf1efe1.png)
 
 정확도는 전체 예측한 데이터 건수중에 예측이 정확히 된 데이터 건수를 비율(%)로 나타낸다. 이러한 정확도는 직관적으로 모델 예측 성능을 나타내는 지표이긴 하나, 데이터셋의 구성에 따라 분류기의 성능을 왜곡할 수 있기 때문에 정확도 수치 하나만 가지고 성능을 평가하지 않는다.
 
@@ -57,6 +58,9 @@ array([[2, 0],
 
 
 ## 정밀도(Precision), 재현율(Recall)
+![image](https://user-images.githubusercontent.com/81638919/133983656-79cf3286-6f15-4ad0-a6d6-b05c05b639fd.png)![image](https://user-images.githubusercontent.com/81638919/133983693-0d4cdf84-54d4-468c-a63a-77b5f6f6c0ea.png)
+
+
 위에서 신용카드 사기 검출에서 정확도가 왜 제대로 평가 지표로 활용되지 못하는지 말했는데, 불균형한 데이터 세트에서 정확도보다 더 선호되는 평가 지표인 정밀도(Precision)와 재현율(Recall)에 대해서 알아보자.
 
 정밀도(Precision) (TP/(FP+TP))는 예측을 Positive로 한 대상 중(FP+TP)에 예측과 실제값이 Positive로 일치한 데이터(TP)의 비율을 뜻하며, 그리고 재현율(Recall) TP /(FN+TP)은 실제 값이 Positive인 대상 중(FN+TP)에 예측과 실제값이 Positive로 일치한 데이터(TP)의 비율을 뜻한다. 재현율(Recall)은 민감도(Sensitivity) 또는 TPR(True Positive Rate)라고도 불린다.
