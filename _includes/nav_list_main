@@ -19,21 +19,21 @@
                 <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
                 {% for category in site.categories %}
                     {% if category[0] == "ML" %}
-                        <li><a href="/categories/cpp" class="">ML ({{category[1].size}})</a></li>
+                        <li><a href="/categories/ML" class="">ML ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "pandas" %}
-                        <li><a href="/categories/programmers" class="">pandas ({{category[1].size}})</a></li>
+                        <li><a href="/categories/pandas" class="">pandas ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "DataEngineering" %}
-                        <li><a href="/categories/stl" class="">DataEngineering ({{category[1].size}})</a></li>
+                        <li><a href="/categories/DataEngineering" class="">DataEngineering ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -41,7 +41,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "SQL" %}
-                        <li><a href="/categories/algorithm" class="">SQL ({{category[1].size}})</a></li>
+                        <li><a href="/categories/SQL" class="">SQL ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
