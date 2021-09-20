@@ -77,26 +77,125 @@ array([[2, 0],
 
 ## 정밀도/재현율 트레이드 오프
 
-분류하려는 업무의 특성상 
+비즈니스의 특성상 정밀도 또는 재현율의 중요도가 달라진다는 것을 배웠다. 그렇다면 둘 중하나가 특별히 강조되어야 할 경우는 어떻게 할까? 바로 분류의 결정 임곗값(Threshold)를 조정해 정밀도 또는 재현율의 수치를 높일 수 있다. 하지만 정밀도와 재현율은 트레이드 오프 관계를 가지고 있기 때문에 둘 중 하나를 올리면 다른 수치가 떨어진다. 이를 정밀도/재현율의 트레이드오프(Trade-off)라고 한다. 타이타닉 Dataset을 이용해 두 지표의 트레이드 오프 관계를 확인해보자.
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score , recall_score , confusion_matrix
+
+# 원본 데이터를 재로딩, 데이터 가공, 학습데이터/테스트 데이터 분할. 
+titanic_df = pd.read_csv('./titanic_train.csv')
+y_titanic_df = titanic_df['Survived']
+X_titanic_df= titanic_df.drop('Survived', axis=1)
+X_titanic_df = transform_features(X_titanic_df)
+X_train, X_test, y_train, y_test=train_test_split(X_titanic_df, y_titanic_df, \
+                                                  test_size=0.2, random_state=0)
+lr_clf = LogisticRegression()
+
+lr_clf.fit(X_train , y_train)
+pred = lr_clf.predict(X_test)
+
+confusion = confusion_matrix( y_test, pred)
+accuracy = accuracy_score(y_test , pred)
+precision = precision_score(y_test , pred)
+recall = recall_score(y_test , pred)
+print('오차 행렬')
+print(confusion)
+print('정확도: {0:.4f}, 정밀도: {1:.4f}, 재현율: {2:.4f}'.format(accuracy , precision ,recall))
+```
+```python
+오차 행렬
+[[92 18]
+ [16 53]]
+정확도: 0.8101, 정밀도: 0.7465, 재현율: 0.7681
+```
+
+```python
+from sklearn.metrics import precision_recall_curve
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+%matplotlib inline
+
+def precision_recall_curve_plot(y_test , pred_proba_c1):
+    # threshold ndarray와 이 threshold에 따른 정밀도, 재현율 ndarray 추출. 
+    precisions, recalls, thresholds = precision_recall_curve( y_test, pred_proba_c1)
+    
+    # X축을 threshold값으로, Y축은 정밀도, 재현율 값으로 각각 Plot 수행. 정밀도는 점선으로 표시
+    plt.figure(figsize=(8,6))
+    threshold_boundary = thresholds.shape[0]
+    plt.plot(thresholds, precisions[0:threshold_boundary], linestyle='--', label='precision')
+    plt.plot(thresholds, recalls[0:threshold_boundary],label='recall')
+    
+    # threshold 값 X 축의 Scale을 0.1 단위로 변경
+    start, end = plt.xlim()
+    plt.xticks(np.round(np.arange(start, end, 0.1),2))
+    
+    # x축, y축 label과 legend, 그리고 grid 설정
+    plt.xlabel('Threshold value'); plt.ylabel('Precision and Recall value')
+    plt.legend(); plt.grid()
+    plt.show()
+    
+precision_recall_curve_plot( y_test, lr_clf.predict_proba(X_test)[:, 1] )
+```
+![image](https://user-images.githubusercontent.com/81638919/133980156-ed81d706-b69e-4293-ab55-c27ffabeebe6.png)
+
+threshold X축이 낮아지면 낮아질수록 ML모델이 양성으로 예측할 확률이 높아지기 때문에 재현율(Recall)이 높아지고 정밀도가 낮아진다.
+
+
 
 ## 정밀도와 재현율의 함정
-정밀도와 재현율은 정확도와 비슷하게 숫자놀음이 될 수 있는데,
-
-정밀도를 100%로 만드는 방법은 확실한 기준이 되는 경우만 Positive로 예측하고 나머지는 모두 Negative로 예측
-
-재현율을 100%로 만드는 방법은 모든 환자를 Positive로 예측하면 된다. 재현율은 TP/(TP+FN) 이므로 전체 환자 1000명을 다 Positive로 예측하는 것이다. 이 중 실제 양성인 사람이 30명 정도라도 TN이 수치에 포함되지 않고 FN은 아예 0이므로 30/(30+0)으로 100%가 된다. 따라서 F1 스코어가 나오는데 이를 알아보자.
+정밀도와 재현율의 임곗값 변경은 업무 환경에 맞게 해야지 하나의 수치를 높이기 위해서만 임계값을 조정한다면 정확도와 같이 숫자놀음에 불과해진다.
+위 그림에서 볼 수 있듯이, 임곗값을 극단적으로 준다면 정밀도나 재현율을 극단적으로 높일 수 있기 때문이다. 따라서 정밀도와 재현율의 수치가 적절하게 조합돼 분류의 종합적인 성능 평가에 사용될 수 있는 평가 지표가 필요하기 위한 F1 스코어가 나오는데 이를 알아보자.
 
 ## F1 Score
 
 F1 스코어(F1 Score)는 정밀도와 재현율을 결합한 지표인데, F1 스코어는 정밀도와 재현율이 어느 한쪽으로 치우치지 않는 수치를 나타낼 때 상대적으로 높은 값을 가진다. 
 
 F1 스코어의 공식은 다음과 같다.
+![image](https://user-images.githubusercontent.com/81638919/133980907-a3ee3751-faa6-493a-b36d-f7521e173f86.png)
+
+
 
 ## ROC 곡선(Receiver Operation Characteristic Curve)과 AUC 
+ROC 곡선과 이에 기반한 AUC 스코어는 이진 분류의 예측 성능 측정에서 매우 중요하게 사용되는 지표이다.
 
-분류의 성능 지표로 사용되는 것은 ROC 곡선 면적에 기반한 AUC 값으로 결정한다.
-TPR은 True Positive Rate의 약자이며, 이는 재현율(Recall)을 나타낸다. 따라서 TPR은 TP/(FN+TP)이며, 민감도로도 불린다.
-FRP은 실제 Negative(음성)을 잘못 예측한 비율을 나타낸다. 즉, 실제는 Negative인데 Positive 또는 Negative로 예측한 것 중 Positive로 잘못 예측한 비율이다.
-FRP = FP(실제 음성을 양성으로 예측) /(FP+TN - 실제 음성)
+ROC 곡선은 FPR(False Positive Rate)가 변할때, TPR(True Positive Rate)가 어떻게 변하는지를 나타내는 곡선이다. 
+여기서 TPR은 위에서 말한 재현율(Recall)을 나타내고, 따라서 TPR은 TP/(FN+TP)이며 여기서는 민감도로도 불린다.
+FRP은 실제 Negative(음성)을 잘못 예측한 비율을 나타낸다. 따라서 실제는 Negative인데 Positive 또는 Negative로 예측한 것 중 Positive로 잘못 예측한 비율이며, 식으로는 FRP = FP(실제 음성을 양성으로 예측) /(FP+TN - 실제 음성) 이다.
 
+```python
+def roc_curve_plot(y_test , pred_proba_c1):
+    # 임곗값에 따른 FPR, TPR 값을 반환 받음. 
+    fprs , tprs , thresholds = roc_curve(y_test ,pred_proba_c1)
+
+    # ROC Curve를 plot 곡선으로 그림. 
+    plt.plot(fprs , tprs, label='ROC')
+    # 가운데 대각선 직선을 그림. 
+    plt.plot([0, 1], [0, 1], 'k--', label='Random')
+    
+    # FPR X 축의 Scale을 0.1 단위로 변경, X,Y 축명 설정등   
+    start, end = plt.xlim()
+    plt.xticks(np.round(np.arange(start, end, 0.1),2))
+    plt.xlim(0,1); plt.ylim(0,1)
+    plt.xlabel('FPR( 1 - Sensitivity )'); plt.ylabel('TPR( Recall )')
+    plt.legend()
+    plt.show()
+    
+roc_curve_plot(y_test, lr_clf.predict_proba(X_test)[:, 1] )
+```
+
+![image](https://user-images.githubusercontent.com/81638919/133982182-a96a2ac5-0871-419f-a277-b6cce1d2b53c.png)
+
+이렇게 ROC 곡선은 FPR과 TPR의 변화 값을 보는 데 이용하며, 분류기의 성능을 보는 것은 ROC 곡선 면적에 해당하는 AUC값으로 결정한다. 낮은 FPR에서 높은 TPR을 얻을 수 있느냐가 관건이며, 곡선이 상단의 모서리에 가까이 가면 직사각형이되어 면적이 1이된다. 면적이 1에 가까울수록 좋은 분류성능을 보여준다고 할 수 있다.
+
+```python
+
+pred_proba = lr_clf.predict_proba(X_test)[:, 1]
+roc_score = roc_auc_score(y_test, pred_proba)
+print('ROC AUC 값: {0:.4f}'.format(roc_score))
+```
+```python
+ROC AUC 값: 0.8706
+```
 
