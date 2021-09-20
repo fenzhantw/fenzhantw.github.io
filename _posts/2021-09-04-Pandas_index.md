@@ -1,5 +1,5 @@
 ---
-title: "[python] pandas 데이터 핸들링 정리(3) Index"
+title: "[pandas] pandas 데이터 핸들링 정리(3) Index"
 excerpt: "set_index,reset_index,multi-level index,sort_index，"
 categories:
     - pandas
