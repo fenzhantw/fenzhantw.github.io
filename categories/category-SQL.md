@@ -1,5 +1,5 @@
 ---
-title: "SQL"
+title: "DB/SQL"
 layout: archive
 permalink: categories/SQL
 author_profile: true
