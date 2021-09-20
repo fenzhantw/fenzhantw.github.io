@@ -157,6 +157,7 @@ threshold X축이 낮아지면 낮아질수록 ML모델이 양성으로 예측�
 F1 스코어(F1 Score)는 정밀도와 재현율을 결합한 지표인데, F1 스코어는 정밀도와 재현율이 어느 한쪽으로 치우치지 않는 수치를 나타낼 때 상대적으로 높은 값을 가진다. 
 
 F1 스코어의 공식은 다음과 같다.
+
 ![image](https://user-images.githubusercontent.com/81638919/133980907-a3ee3751-faa6-493a-b36d-f7521e173f86.png)
 
 
