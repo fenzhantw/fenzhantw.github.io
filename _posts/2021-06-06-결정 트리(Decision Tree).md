@@ -34,6 +34,40 @@ toc_sticky: true
 
 # 결정 트리 주요 하이퍼 파라미터
 
-max_depth : 트리의 최대 깊이를 규정  디폴트는 None
+max_depth : 트리의 최대 깊이를 규정하는데 사용됨.  디폴트는 None
+
 min_samples_split : 노드를 분할하기 위한 최소한의 샘플 데이터 수로 과적합을 제어하는 데 사용됨
-min_samples_leaf : 
+
+min_samples_leaf : 말단 노드의 최소 샘플의 숫자를 지정하며, 과적합을 제어하는 데 사용됨
+
+# Feature 선택 중요도
+
+사이킷런의 DecisionClassifier 객체는 feature_importances_를 통해 중요한 Feature들을 선택할 수 있게 정보를 제공한다.
+
+```python
+import seaborn as sns
+import numpy as np
+%matplotlib inline
+
+# feature importance 추출 
+print("Feature importances:\n{0}".format(np.round(dt_clf.feature_importances_, 3)))
+
+# feature별 importance 매핑
+for name, value in zip(iris_data.feature_names , dt_clf.feature_importances_):
+    print('{0} : {1:.3f}'.format(name, value))
+
+# feature importance를 column 별로 시각화 하기 
+sns.barplot(x=dt_clf.feature_importances_ , y=iris_data.feature_names)
+```
+```
+Feature importances:
+[0.025 0.    0.555 0.42 ]
+sepal length (cm) : 0.025
+sepal width (cm) : 0.000
+petal length (cm) : 0.555
+petal width (cm) : 0.420
+```
+![image](https://user-images.githubusercontent.com/81638919/134007086-0f3d1c03-206a-46a7-81b5-6540dd127ac3.png)
+
+
+
