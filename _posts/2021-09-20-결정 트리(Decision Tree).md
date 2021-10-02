@@ -63,7 +63,7 @@ print("Feature importances:\n{0}".format(np.round(dt_clf.feature_importances_, 3
 for name, value in zip(iris_data.feature_names , dt_clf.feature_importances_):
     print('{0} : {1:.3f}'.format(name, value))
 
-# feature importance를 column 별로 시각화 하기 
+# feature importance를 column 별로 시각화
 sns.barplot(x=dt_clf.feature_importances_ , y=iris_data.feature_names)
 ```
 ```
