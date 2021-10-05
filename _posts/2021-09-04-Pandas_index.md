@@ -6,7 +6,7 @@ categories:
 
 tag:
     - python
-    - pandas
+    - pandas2
 
 author_profile: true    #작성자 프로필 출력 여부
 
