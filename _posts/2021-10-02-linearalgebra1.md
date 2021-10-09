@@ -2,7 +2,7 @@
 title: "[선형대수] 기본행 연산과 가우스-요르단 소거법"
 excerpt: "기본행 연산,가우스 소거법, 线性代数, 高斯消去法"
 categories:
-    - 선형대수
+    - LinearAlgebra
 
 tag:
     - linear algebra
