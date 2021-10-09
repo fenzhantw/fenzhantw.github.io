@@ -53,13 +53,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-             <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Probability and Statistics" %}
-                        <li><a href="/categories/LinearAlgebra" class="">Probability and Statistics ({{category[1].size}})</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
       </li>
   </ul>
 </nav>
