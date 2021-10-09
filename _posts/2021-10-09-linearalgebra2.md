@@ -2,7 +2,7 @@
 title: "[선형대수] 행렬의 연산과 역행렬, 그리고 전치행렬"
 excerpt: "행렬의 연산, 线性代数, 矩陣運算"
 categories:
-    - 선형대수
+    - LinearAlgebra
 
 tag:
     - linear algebra
