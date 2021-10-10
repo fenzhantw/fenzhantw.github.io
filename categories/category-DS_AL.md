@@ -1,5 +1,5 @@
 ---
-title: "자료구조/알고리즘
+title: "자료구조/알고리즘"
 layout: archive
 permalink: categories/DS_AL
 author_profile: true
