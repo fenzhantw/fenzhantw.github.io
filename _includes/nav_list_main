@@ -56,7 +56,7 @@
          <span class="nav__sub-title">CS</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "자료구조&알고리즘" %}
+                    {% if category[0] == "DAAL" %}
                         <li><a href="/categories/DA_AL" class="">자료구조와 알고리즘 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
