@@ -1,5 +1,5 @@
 ---
-title: "LinearAlgebra"
+title: "선형대수(線性代數)"
 layout: archive
 permalink: categories/LinearAlgebra
 author_profile: true
