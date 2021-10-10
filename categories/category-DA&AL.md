@@ -7,5 +7,5 @@ sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.자료구조&알고리즘 %}
+{% assign posts = site.categories.DAAL %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
