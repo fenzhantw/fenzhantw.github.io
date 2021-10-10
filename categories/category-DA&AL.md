@@ -1,7 +1,7 @@
 ---
 title: "자료구조&알고리즘"
 layout: archive
-permalink: categories/자료구조&알고리즘
+permalink: categories/DA_AL
 author_profile: true
 sidebar_main: true
 ---
