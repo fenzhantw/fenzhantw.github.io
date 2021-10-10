@@ -1,11 +1,11 @@
 ---
-title: "자료구조/알고리즘"
+title: "Data structure and algorithm"
 layout: archive
-permalink: categories/DS_AL
+permalink: categories/Data structure and algorithm 
 author_profile: true
 sidebar_main: true
 ---
 
 
-{% assign posts = site.categories.자료구조/알고리즘 %}
+{% assign posts = site.categories.Data structure and algorithm %}
 {% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
