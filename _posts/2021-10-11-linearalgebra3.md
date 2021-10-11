@@ -102,6 +102,7 @@ A에 기본 행 연산을 해서 간단한 행렬(e.g 삼각행렬)B를 얻었�
 - A가 가역행렬 <-> det A !=0
 
 ## 문제풀이
-![image](https://user-images.githubusercontent.com/81638919/136743712-6a0e046b-c60d-41ea-8c0b-8490e9d3814f.png)![image](https://user-images.githubusercontent.com/81638919/136743753-fa2faf50-ce73-45bc-8474-095607aef2d6.png)
+<img src="https://user-images.githubusercontent.com/81638919/136743712-6a0e046b-c60d-41ea-8c0b-8490e9d3814f.png"  width="400" height="600"><img src="https://user-images.githubusercontent.com/81638919/136743753-fa2faf50-ce73-45bc-8474-095607aef2d6.png"  width="400" height="600">
+
 
 
