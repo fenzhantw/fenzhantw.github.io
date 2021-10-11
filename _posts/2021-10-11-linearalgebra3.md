@@ -40,15 +40,20 @@ toc_sticky: true
 만약, B = 정사각행렬 A의 두 행을 바꿔서 얻은 행렬이고, E는 ln의 두 행을 바꿔서 얻은 기본행렬이라고 한다면
 행렬식의 정의에 의해서
 
+![image](https://user-images.githubusercontent.com/81638919/136740869-7aa8d660-410a-4077-bca9-68e910d23b52.png)
+
 (기본 행 연산) 한 행에 0이 아닌 상수를 곱한다.
 만약, B = 정사각행렬 A의 한 행에 k를 곱해서 얻은 행렬, E는 ln의 한 행에 k를 곱해서 얻은 기본행렬이라고 한다면
 행렬식의 정의에 의해서
+
+![image](https://user-images.githubusercontent.com/81638919/136740898-f7dbb682-6790-4169-8c3b-bfb19ea5ffee.png)
 
 
 (기본 행 연산) 한 행의 상수배를 다른 행에 더한다.
 만약, B = 정사각행렬 A의 한 행의 k배를 다른 행에 더한 행렬, E는 ln의 한 행에 k배를 다른 행에 더한 기본행렬이라고 한다면
 행렬식의 성질에 의하여 
 
+![image](https://user-images.githubusercontent.com/81638919/136740914-ccf78665-e823-496d-8eca-39209ae1029c.png)
 
 
 정리 A가 정사각행렬이고 E가 기본행렬이면 
