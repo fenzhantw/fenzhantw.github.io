@@ -6,7 +6,7 @@ categories:
 
 tag:
     - linear algebra
-    - vector space
+    - Vector space
 
 author_profile: true    #작성자 프로필 출력 여부
 
