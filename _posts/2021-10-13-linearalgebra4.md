@@ -70,7 +70,18 @@ R^2에서 x+y는 이 벡터들이 이루는 평행사변형을 생각 했을때,
 
 https://terms.naver.com/entry.nhn?docId=2073659&cid=47324&categoryId=47324
 
-https://terms.naver.com/entry.nhn?docId=3338417&cid=47324&categoryId=47324
+부분공간 H는 부분 집합이 되면서 벡터 공간이 되는 것을 말하는데, 아래의 조건을 이용하면 부분공간임을 쉽게 확인할 수 있다.
+![image](https://user-images.githubusercontent.com/81638919/138211138-94e83e4b-90e2-459c-a45e-12eb8afaeefd.png)
+H가 공집합이 아니면, H에 있는 원소 x,y와 스칼라 c에 대해서 다음과 같이 x+cy가 다시 H에 들어간다면, 모든 x,y와 c에 대해서 이러한 H가 부분공간이 되는 것이다.
+
+![image](https://user-images.githubusercontent.com/81638919/138211316-f32a765d-099f-4a7d-ac0b-50fd849368eb.png)
+
+(1)을 보면, 이 안에 있는 두 개의 원소를 끄집에내서 하나를 스칼라배해서 다시 더한다고 하더라도, 두 번째 있는 성분들은 항상 0이 되기 때문에 다시 이 집합안에 들어간다.
+따라서 부분 공간이 된다고 말할 수 있다.
+
+(2)은 A*x=0이 되는 x들을 다 모아놓은 집합이다. 이 안에 있는 벡터를 꺼내보자, 둘 다 A*x=0의 해이다. 여기 x에다가 y에 상수 배를 해서 더하면 역시나 마찬가지로 A를 곱해서 0이 된다.
+따라서 부분공간인 것을 증명할 수 있다.
+
 
 ## 일차결합과 생성 집합
 
@@ -85,7 +96,15 @@ https://terms.naver.com/entry.nhn?docId=3338417&cid=47324&categoryId=47324
 
 ![image](https://user-images.githubusercontent.com/81638919/137431904-e7ee630a-e655-4c60-9767-b79adb461ba6.png)
 
+만들어 낸다는 개념을 배웠으니, 다음 같은 정의도 자연스럽게 이해할 수 있다.
 
+![image](https://user-images.githubusercontent.com/81638919/138211716-a2cdb479-548e-43fe-9076-76f669b0ae3a.png)
+
+v1부터 vm깨 벡터 m개가 있다. Span v1 to vm이라고하면, v1 to vm으로 만들어 낼 수 있는 모든 일차결합의 벡터들을 다 모아 놓은 집합이라고 한다. 이 집합은 v1부터 vm으로 생성되었다라고 이야기한다.
+
+그럼 이 집합은 R^n의 부분 공간이 될까?
+
+다음과 같이 쉽게 증명할 수 있다.
 
 
 
