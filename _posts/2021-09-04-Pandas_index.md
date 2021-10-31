@@ -19,7 +19,7 @@ Pandas는 다양한 메서드와 속성이 존재하기 때문에 정리를 하�
 
 그리고 pandas는 원하는 데이터 핸들링을 하기 위해서 하나의 방법만 존재하지 않기 때문에, 자신만의 판다스 사용 방법을 외워서 숙달한다면 더 빠르게 실전 상황에서 데이터 핸들링을 할 수 있을 겁니다.
 
-이번에는 데이터 핸들링 첫번째로, drop duplicate, value_counts, 요약된 통계량을 보여주는 summary statistics와 groupby를 정리하겠습니다.
+이번에는 데이터 핸들링 첫번째로, drop duplicate, value_counts, 요약된 통계량을 보여주는 summary statistics와 groupby를 정리하겠습니다
 
 ## 데이터 소개
 
