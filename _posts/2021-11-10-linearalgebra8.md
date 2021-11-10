@@ -106,6 +106,7 @@ x= (-1, 1, 0)
 (3) 첫 행 이후의 각 행에서 첫번째 1은 윗 행의 첫번째 1 오른쪽에 위치한다.
 
 (4) 첫번째 1을 포함하는 열의 다른 원소는 모두 0이다. 
+
 매우 복잡하게 보이지만, 아래의 그림과 같은 행렬이면 기약 행 사다리꼴(reduced row echelon form ,RREF)라고 한다. 
 
 ![image](https://user-images.githubusercontent.com/81638919/141115700-aa2dea05-9c8c-4dcc-8dae-d49d97b826b8.png)
