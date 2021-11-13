@@ -1,5 +1,5 @@
 ---
-title: "[선형대수] 3-2 행렬식과 기본행 연산"
+title: "[선형대수] 행렬식과 기본행 연산"
 excerpt: "행렬의 연산, 线性代数, 矩陣運算"
 categories:
     - LinearAlgebra
