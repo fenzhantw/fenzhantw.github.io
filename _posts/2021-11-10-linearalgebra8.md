@@ -17,9 +17,11 @@ toc_sticky: true
 ## 선형연립방정식
 다음과 같이 미지수 x와 y에 관하여 일차식으로 표현되는 방정식을 미지수 x,y에 관한 일차방정식(linear equation)또는 선형방정식이라고 한다.
 
-                                  2x-3y=1
 
-![image](https://user-images.githubusercontent.com/81638919/141103278-ad4169e1-d4e0-4cb6-9c9c-7d9103096367.png)
+<img src="https://user-images.githubusercontent.com/81638919/141103278-ad4169e1-d4e0-4cb6-9c9c-7d9103096367.png"  width="300" height="200">
+
+(그림) 2x-3y=1
+
 
 이  2x-3y=1 식을 만족하는 순서쌍 (x,y)를 좌표로 하는 모든 점을 좌표평면 위에 나타내면 그래프는 직선이 된다.
 
@@ -29,7 +31,8 @@ toc_sticky: true
 
 아래의 그림을 보자
 
-![image](https://user-images.githubusercontent.com/81638919/141138328-5cd36333-eb4e-4fa5-8c11-c7097852ec70.png)
+<img src="https://user-images.githubusercontent.com/81638919/141138328-5cd36333-eb4e-4fa5-8c11-c7097852ec70.png"  width="500" height="300">
+
 
 (1) 유일한 해를 갖는다.
 
@@ -136,7 +139,7 @@ x+5y+4z-7u+v =-17
 ```
 변수가 5개이고, 미지수는 3개인데, 이것에 대응하는 선형연립방정식을 써주면 다음과 같은 식이 된다.
 
-![image](https://user-images.githubusercontent.com/81638919/141138846-be008f11-bdaa-43c1-b1a2-33bc7f99838e.png)
+<img src="https://user-images.githubusercontent.com/81638919/141138846-be008f11-bdaa-43c1-b1a2-33bc7f99838e.png"  width="400" height="400">
 
 r과 s에 임의의 실수에 대입하여 얻는 (x,y,z,u,v)는 모두 해가 된다. 따라서 무수히 많은 해를 갖게되며, 이때 모든 해를 해집합이라고 한다.
 
