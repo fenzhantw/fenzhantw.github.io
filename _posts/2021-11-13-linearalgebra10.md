@@ -75,5 +75,10 @@ k차원 벡터공간에 대해서도 같은 식으로 이야기할 수 있으며
 위에서 정규직교기저를 찾는 아이디어를 활용하면 {u1,....uk}의 아무 벡터 ui와 uj를 뽑아서 내적했을 때 항상 0이 되는 것을 확인할 수 있다.
 따라서 ui부터 uk는 H의 직교기저를 얻을 수 있다.
 
+## 문제풀이
+
+<img src="https://user-images.githubusercontent.com/81638919/141652580-e970827b-92ec-4f56-a20e-f1eff0a6117f.png"  width="400" height="600"><img src="https://user-images.githubusercontent.com/81638919/141652592-92d34884-6598-4744-bf29-c5e754027d95.png"  width="400" height="600">
+
+
 
 
