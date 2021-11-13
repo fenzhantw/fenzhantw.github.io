@@ -1,5 +1,5 @@
 ---
-title: "[선형대수] 4-1 벡터공간"
+title: "[선형대수] 벡터공간"
 excerpt: "벡터공간, 线性代数, 向量空間"
 categories:
     - LinearAlgebra
