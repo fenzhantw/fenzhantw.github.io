@@ -7,7 +7,7 @@ author_profile: true
 
 * NAME :  Brady kim(阿金)，김성수
 * MAJOR : Chinese Language and Literature 
-* Miner : Business Administration
+* MINOR : Business Administration
 
 ## Career & Activities
 
