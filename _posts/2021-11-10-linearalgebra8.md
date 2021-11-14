@@ -1,12 +1,11 @@
 ---
-title: "[선형대수] 선형연립방정식의 해집합"
+title: "[기초수학] 선형연립방정식의 해집합"
 excerpt: "线性代数"
 categories:
-    - LinearAlgebra
+    - Basicmath
 
 tag:
-    - linear algebra
-    - Vector space
+    - Basicmath
 
 author_profile: true    #작성자 프로필 출력 여부
 
