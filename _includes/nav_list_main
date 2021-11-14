@@ -53,6 +53,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+             <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == " Basicmath" %}
+                        <li><a href="/categories/Basicmath" class="">기초수학 for AI ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
          <span class="nav__sub-title">CS</span>
             <ul>
                 {% for category in site.categories %}
