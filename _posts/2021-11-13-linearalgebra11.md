@@ -50,6 +50,7 @@ toc_sticky: true
 
 이를 이용해서 위에서 표 의 최소제곱문제 min(||Au-y||)도 앞서 설명한 min||ta-x||과 유사한 방법으로 풀 수 있다
 
+
 ![image](https://user-images.githubusercontent.com/81638919/141677611-caa29093-8731-41e6-b3b9-72e32c5f2ae8.png)
 
 ```python
