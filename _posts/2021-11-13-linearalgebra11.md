@@ -1,0 +1,64 @@
+---
+title: "[기초수학] 정사영과 최소제곱문제"
+excerpt: "线性代数"
+categories:
+    - LinearAlgebra
+
+tag:
+    - linear algebra
+
+author_profile: true    #작성자 프로필 출력 여부
+
+toc: true   #Table Of Contents 목차 
+toc_sticky: true
+---
+##
+이 문서는 성균관대학교 수학과 이상구 교수님의 강의인 인공지능을 위한 기초수학을 정리한 내용입니다.
+
+## 최소제곱문제(least square problem)
+
+최소제곱법은 데이터들의 패턴과 분포(behavior)를 잘 표현하는 근사직선이나 근사곡선을 구하는 직관적이며 간단한 방법으로, 수치해석, 회귀분석 등으로 다양하게 활용된다.
+
+만약에 x와 y에 관한 2차원 데이터가 다음과 같이 주어져 있다고 하자.
+
+![image](https://user-images.githubusercontent.com/81638919/141677260-12570bbe-00b4-40f1-b5f6-8fef6e97cfb7.png)
+
+이때, x와 y를 관계를 가장 잘 보여주는 일차함수 y=a+bx를 찾는다. 가장 이상적인 상황은 모든 데이터 (xi,yi)에 대해서 y=a+bx가 만족되는 y절편 a와 기울기 b를 찾는 것이다.
+
+따라서 다음과 같은 미지수가 a,b 인 선형연립방정식과 행렬표현을 얻게 된다.
+
+![image](https://user-images.githubusercontent.com/81638919/141677305-8a3aa195-b6e3-4b10-a070-b858bcab48f3.png)
+
+대개는 미지수의 개수보다 만은 개수의 데이터를 사용하므로, 방정식의 수가 미지수의 개수보다 많은 선형연립방정식이 생기게 된다. 이러한 경우 일반적으로 선형연립방정식을 만족하는 해를 찾을 수 없다. 대신 Au와 y 사이의 거리(dist(au,y) =||Au-y||)가 최소가 되는 근사해를 찾는 문제를 최소제곱문제(least square problem)이라고 한다.
+
+즉, 주어진 4개의 식 모두 만족하지는 않지만, 그런 식 중에서 가장 오차(error)가 작은 직선을 구하는 것이다.
+
+## 정사영과 최소제곱해
+
+최소제곱문제를 풀기 위해서는 정사영(projection)에 관하여 알아야 하는데, 다음 그림을 보자.
+
+![image](https://user-images.githubusercontent.com/81638919/141677579-693d31d7-7341-41a7-b801-c19a2fd0b633.png)
+이 문제는 시작점이 같은 두 벡터 a와 x에 대하여 a를 포함하는 직선과 x사이의 거리가 최소가 되게 하는 t를 찾으려고 하는 것이다. 여기서 ta와 x가 최소가 되는 점은 x의 끝점에서 a를 포함하는 직선 위에 수선의 발을 내려 생기는 벡터 p임을 알 수 있다.
+
+그리고 이때 a 벡터의 길이를 p로 만들어 주는 t의 값이 min||ta-x||의 해가 된다. 우리는 p를 a 위로의 x 정사영(projection)이라고 한다.
+
+두 벡터 사이의 각이 직교라면, 내적이 0인것을 이용하여 다음을 얻을 수 있다.
+
+![image](https://user-images.githubusercontent.com/81638919/141677586-154a9aae-e70d-4f84-ab5a-2a53464b6705.png)
+
+
+이를 이용해서 위에서 표 의 최소제곱문제 min(||Au-y||)도 앞서 설명한 min||ta-x||과 유사한 방법으로 풀 수 있다
+
+![image](https://user-images.githubusercontent.com/81638919/141677611-caa29093-8731-41e6-b3b9-72e32c5f2ae8.png)
+
+```python
+A = matrix([[1, 0], [1, 1], [1, 2], [1, 3]])
+y = vector([1, 3, 4, 4])
+print("u* =", (A.transpose()*A).inverse()*A.transpose()*y)
+```
+u* = (3/2, 1)
+
+따라서 주어진 2차원 데이터 (0,1),(1,3),(2,4),(3,4)를 가장 잘 나타내는 직석인 최소제곱직선은
+Y= 3/2+x이다.
+
+
