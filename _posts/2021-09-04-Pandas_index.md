@@ -15,7 +15,7 @@ toc_sticky: true
 ---
 
 ## Intro
-Pandas는 다양한 메서드와 속성이 존재하기 때문에 정리를 하지 않으면 헷갈릴 수 있으므로, 배운 내용을 정리하고자 합니다.
+Pandas는 다양한 메서드와 속성이 존재하기 때문에 정리를 하지 않으면 헷갈릴 수 있으므로, 배운 내용을 정리하고자 합니다
 
 그리고 pandas는 원하는 데이터 핸들링을 하기 위해서 하나의 방법만 존재하지 않기 때문에, 자신만의 판다스 사용 방법을 외워서 숙달한다면 더 빠르게 실전 상황에서 데이터 핸들링을 할 수 있을 겁니다.
 
@@ -112,7 +112,7 @@ print(temperatures_ind.loc[cities])
 ```
 
 ```
-                       date country  avg_temp_c
+                       date country  avg_temp
 city                                           
 Moscow           2000-01-01  Russia      -7.313
 Moscow           2000-02-01  Russia      -3.551
