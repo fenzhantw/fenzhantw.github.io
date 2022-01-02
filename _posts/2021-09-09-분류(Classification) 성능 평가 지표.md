@@ -1,8 +1,8 @@
 ---
-title: "[ML] 분류 성능 평가 지표（分類器評估方法）"
+title: "[BasicML] 분류 성능 평가 지표（分類器評估方法）"
 excerpt: "정확도, 오차행렬, 정밀도, 재현율, F1스코어, ROC AUC 分類器評估方法"
 categories:
-    - ML
+    - BasicML
 
 tag:
     - python
