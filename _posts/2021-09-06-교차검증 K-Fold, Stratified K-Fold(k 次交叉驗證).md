@@ -1,5 +1,5 @@
 ---
-title: "[ML] 교차검증 K-Fold, Stratified K-Fold(k 次交叉驗證)"
+title: "[BasicML] 교차검증 K-Fold, Stratified K-Fold(k 次交叉驗證)"
 excerpt: "교차검증 K-Fold, Stratified K-Fold,機械學習,k 次交叉驗證"
 categories:
     - BasicML
