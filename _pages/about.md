@@ -6,14 +6,14 @@ author_profile: true
 --- 
 
 * NAME :  Brady kim(阿金)，김성수
-* MAJOR : Chinese Language and Literature 
-* MINOR : Business Administration
+* MAJOR : Bigdata Analytics / Chinese Language and Literature 
 
 ## Career & Activities
 
+Mr,Mention Data Analyst(2021.02 - 2022.02)
 
 ## Current Interest
- * Data Analytics
+ * Data Science
  * Data Infra and Engineer
 
 ## Contact
