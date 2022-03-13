@@ -1,7 +1,7 @@
 ---
-title: "Basic ML(Machine Learning)"
+title: "ML(Machine Learning)"
 layout: archive
-permalink: categories/BasicML
+permalink: categories/ML
 author_profile: true
 sidebar_main: true
 ---
