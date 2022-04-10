@@ -1,5 +1,5 @@
 ---
-title: "ML(Machine Learning)"
+title: "Machine Learning"
 layout: archive
 permalink: categories/ML
 author_profile: true
