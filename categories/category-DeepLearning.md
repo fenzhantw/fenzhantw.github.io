@@ -1,7 +1,7 @@
 ---
 title: "Deep Learning"
 layout: archive
-permalink: categories/DeepLearning
+permalink: categories/DL
 author_profile: true
 sidebar_main: true
 ---
