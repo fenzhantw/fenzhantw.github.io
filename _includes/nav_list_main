@@ -25,6 +25,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "DeepLearning" %}
+                        <li><a href="/categories/DeepLearning" class="">Deep Learning ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "pandas" %}
                         <li><a href="/categories/pandas" class="">pandas ({{category[1].size}})</a></li>
                     {% endif %}
