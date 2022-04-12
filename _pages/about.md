@@ -6,7 +6,7 @@ author_profile: true
 --- 
 
 * NAME :  Brady kim(阿金)，김성수
-* MAJOR : Bigdata Analytics / Chinese Language and Literature 
+* MAJOR : Bigdata Analytics/ Information System / Chinese Language and Literature 
 
 ## Career & Activities
 
